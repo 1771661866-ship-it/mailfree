@@ -1,0 +1,35 @@
+name = "mailfree"
+# name = "mail-exhibit"
+main = "src/server.js"
+compatibility_date = "2024-01-01"
+keep_vars=true
+
+# D1 数据库绑定
+[[d1_databases]]
+binding = "TEMP_MAIL_DB"
+database_name = "moemail-db" #你的d1数据库名称
+database_id = "a214ed8f-0a74-4380-98b2-64d1cbd36338" # 你的database_id
+# 登录会话过期时间（单位：天，默认7天）
+# 环境变量
+[vars]
+# FORWARD_RULES="[{"prefix":"vip","email":"a@example.com"},{"prefix":"*","email":"example@qq.com"}]"
+ADMIN_NAME="admin"
+ADMIN_PASSWORD="@Lm121345"
+GUEST_PASSWORD="guest"
+JWT_TOKEN="9f6c2d8a7e3b4c1d9a0f5e6b7c8d2a1f4b8e2c9d6a3f1b7e0c5d9a2f6b"
+JWT_TOKENGUEST_PASSWORD="e7d4c1a9f3b8e2d6c5a0f9b1e3d7c8a6f2b5e9d1c4a8f0b3e6d2c9a5f7b1e4d8c"
+SESSION_EXPIRE_DAYS="365"
+MAIL_DOMAIN="songniqu.cfd"
+
+
+
+# 静态资源目录（Workers + Assets）
+[assets]
+directory = "public"
+# 显式指定绑定名，确保在 Worker 中通过 env.ASSETS 可用
+binding = "ASSETS"
+
+
+# wrangler.toml (wrangler v3.88.0^) 日志服务
+# [observability.logs]
+# enabled = true
